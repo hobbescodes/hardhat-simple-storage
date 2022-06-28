@@ -14,7 +14,7 @@ task("accounts", "Prints the list of accounts", async (taskArgs, hre) => {
 
 const RINKEBY_RPC_URL = process.env.RINKEBY_RPC_URL
 const PRIVATE_KEY = process.env.PRIVATE_KEY
-const ETHERSCAN_API_KEY = process.ETHERSCAN_API_KEY
+const ETHERSCAN_API_KEY = process.env.ETHERSCAN_API_KEY
 
 // You need to export an object to set up your config
 // Go to https://hardhat.org/config/ to learn more
@@ -33,8 +33,6 @@ module.exports = {
         },
     },
     etherscan: {
-        apiKey: {
-            rinkeby: ETHERSCAN_API_KEY,
-        },
+        apiKey: ETHERSCAN_API_KEY,
     },
 }
