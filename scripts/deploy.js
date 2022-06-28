@@ -2,7 +2,7 @@
 // but hardhat does
 const { ethers, run, network } = require("hardhat")
 
-main = async () => {
+const main = async () => {
     const SimpleStorageFactory = await ethers.getContractFactory(
         "SimpleStorage"
     )
@@ -24,7 +24,7 @@ main = async () => {
     console.log(`Updated value is: ${updatedValue}`)
 }
 
-verify = async (contractAddress, args) => {
+const verify = async (contractAddress, args) => {
     console.log("Verifying contract...")
     try {
         await run("verify:verify", {
